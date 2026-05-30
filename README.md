@@ -1,4 +1,4 @@
-# Snowflake Cortex — E2E Pre-Sales Workflow
+# Snowflake Cortex — E2E Pre-Sales Workflow for Seven Peaks Nexus Multi-Agent Flow
 
 End-to-end pipeline: **Google Drive RFP → 8-stage agent harness → client-ready proposal (MD/PDF)** on Snowflake.
 
