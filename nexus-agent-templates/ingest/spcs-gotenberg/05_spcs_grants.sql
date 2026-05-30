@@ -1,0 +1,14 @@
+-- ═══════════════════════════════════════════════════════════════════
+-- SPCS grants for Gotenberg service (run after compute pool + service created)
+-- Adjust role name if not using SYSADMIN.
+-- ═══════════════════════════════════════════════════════════════════
+
+USE ROLE ACCOUNTADMIN;
+
+GRANT CREATE COMPUTE POOL ON ACCOUNT TO ROLE SYSADMIN;
+GRANT USAGE ON COMPUTE POOL DEMO_SPS_CORTEX.NEXUS.PDF_COMPUTE_POOL TO ROLE SYSADMIN;
+GRANT MONITOR ON SERVICE DEMO_SPS_CORTEX.NEXUS.GOTENBERG_PDF_SERVICE TO ROLE SYSADMIN;
+
+-- Image registry
+GRANT CREATE IMAGE REPOSITORY ON SCHEMA DEMO_SPS_CORTEX.NEXUS TO ROLE SYSADMIN;
+GRANT READ ON IMAGE REPOSITORY DEMO_SPS_CORTEX.NEXUS.GOTENBERG_REPO TO ROLE SYSADMIN;

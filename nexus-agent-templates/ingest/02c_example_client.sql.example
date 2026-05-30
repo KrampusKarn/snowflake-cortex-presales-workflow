@@ -1,0 +1,11 @@
+-- Example client registration (copy and customize — do not commit real folder IDs)
+-- Run after 01_client_stage.sql
+
+USE DATABASE IDENTIFIER($DEPLOY_DATABASE);
+USE SCHEMA IDENTIFIER($DEPLOY_SCHEMA);
+
+INSERT INTO CLIENTS (CLIENT_NAME, DISPLAY_NAME, DRIVE_FOLDER_ID, ACTIVE)
+SELECT 'acme-corp', 'Acme Corp RFP 2026', 'YOUR_GOOGLE_DRIVE_FOLDER_ID', TRUE
+WHERE NOT EXISTS (
+  SELECT 1 FROM CLIENTS WHERE CLIENT_NAME = 'acme-corp'
+);

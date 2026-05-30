@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+
+# Local IDE / agent config
+.claude/
+
+# Client documents (keep out of showcase repo)
+*.pdf
+
+# Client-specific estimation example (local reference only)
+skills/pre-sales/design-estimation/Resources/design-estimations-example.csv
+
+# Python
+__pycache__/
+*.pyc
+
+# Local deploy config (copy from deploy_config.example.sql)
+nexus-agent-templates/deploy_config.sql
+
+# ── Superseded SQL (use nexus-agent-templates/ingest/ + orchestration/ for E2E) ──
+
+# Standalone Cortex Search DDL — unified in nexus-agent-templates/ingest/
+templates/cortex-search/01_schema_and_tables.sql
+templates/cortex-search/02_search_services.sql
+templates/cortex-search/03_permissions.sql
+templates/cortex-search/04_ingest_documents.sql
+
+# Legacy Nexus per-agent creation (replaced by RUN_SKILL orchestration harness)
+nexus-agent-templates/nexus_create_agent.sql
+nexus-agent-templates/create_agent_template.sql
+nexus-agent-templates/access_check.sql
+nexus-agent-templates/permissions.sql
+nexus-agent-templates/grant_sps-sf-sync_agent_builder.sql

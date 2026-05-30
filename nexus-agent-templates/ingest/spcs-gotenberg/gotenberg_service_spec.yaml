@@ -1,0 +1,22 @@
+spec:
+  containers:
+    - name: gotenberg
+      image: /{{ DEPLOY_DATABASE }}/{{ DEPLOY_SCHEMA }}/{{ IMAGE_REPO_NAME }}/gotenberg:8
+      env:
+        LOG_LEVEL: info
+        GOTENBERG_API_TIMEOUT: 120s
+      resources:
+        requests:
+          memory: 2Gi
+          cpu: 1
+        limits:
+          memory: 4Gi
+          cpu: 2
+      readinessProbe:
+        port: 3000
+        path: /health
+  endpoints:
+    - name: pdfapi
+      port: 3000
+      public: true
+      protocol: HTTP
